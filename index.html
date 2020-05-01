@@ -1,61 +1,45 @@
+<!DOCTYPE html>
 <html>
     <head>
         <title>Live Counter</title>
-         <link rel="stylesheet" href="odometer-theme-car.css" />
-         <link rel="stylesheet" href="/css/style.css">
-         <script src="odometer.min.js"></script>
-         <script type="text/javascript" src="jquery.min.js"></script>
+        <link rel="icon" type="image/png" href="assets/img/Website logo.png">
+         <link rel="stylesheet" href="assets/css/odometer-theme-minimal.css" />
+         <link rel="stylesheet" href="assets/css/style.css">
+         <script src="assets/js/odometer.min.js"></script>
+         <script src="assets/js/jquery.min.js"></script>
+         <script src="assets/js/script.js"></script>
+
          
+         
+        
     </head>
 
-    <script type="text/javascript">
-    
-    $(document).ready( function() {
-        
-        var chanName = "";
-        loadChannel("UCPgdlPNzKc6qnPu1oxYWIAA");
-        function loadChannel(name) {
+       <body>
 
-            chanName = name;
-
-            var url = 'https://www.googleapis.com/youtube/v3/channels?part=statistics&id='+name+'&key=AIzaSyC1Dz3mDyUn7ftZ7Gaj36ILi_IzkR1jnEY';
-            $.getJSON(url, function(data) {
-                $('#odometer').html(data.items[0].statistics.subscriberCount);
-            });
-
-            var url1 = 'https://www.googleapis.com/youtube/v3/channels?part=snippet&id='+name+'&key=AIzaSyC1Dz3mDyUn7ftZ7Gaj36ILi_IzkR1jnEY';
-            $.getJSON(url1, function(data) {
-                $('#ytName').html(data.items[0].snippet.title);
-                $('#ytImage').html('<img src="'+data.items[0].snippet.thumbnails.medium.url+'">');
-                $('#ytLink').html('<a href=\"https://www.youtube.com/'+ data.items[0].snippet.customUrl + '\">Link</a>');
-            });
-        }
-
-        setInterval(function(){
-            var url = 'https://www.googleapis.com/youtube/v3/channels?part=statistics&id='+chanName+'&key=AIzaSyC1Dz3mDyUn7ftZ7Gaj36ILi_IzkR1jnEY';
-            $.getJSON(url, function(data) {
-                $('#odometer').html(data.items[0].statistics.subscriberCount);
-            });
-
-        }, 5000);
-
-        $('#update').click( function() {
-            loadChannel($('#chnlName').val());
-        });
-    
-    });
-
-    </script>
-
-    <body>
-        <center>
-            <input type="text" id="chnlName">Enter Channel ID</input>
-            <button id="update">Change</button>
-            <p id="ytName">ytName</p>
-            <p id="ytImage">ytImage</p>
-            <p id="ytLink">ytLink</p>
+        <div class="card">
+            
+           <div class="counter-main">
+            <p id="ytName" class="ytName">ytName</p>
+            <div id="ytImage" class="ytImage">
+            <img src="assets/images/profilepic.png" alt="avater" id="ytImage" class="ytImage">
+            </div>
             <br>
-            <div id="odometer" class="odometer">0</div>
-        </center>
+            <div id="ytSubs" class="ytSubs odometer">0,000</div>
+            <p class="subscriber-text">subscribers</p>
+            <input type="text" id="chnlName" class="chnlName" placeholder="Enter Channel ID"></input>
+            <button id="change" class="change">Change</button>
+           </div>
+           <br>
+           <div class="card">
+            <p id="ytLink" class="ytLink">ytLink</p>
+           </div>
+           <div class="card">
+            <h1>Stats</h1>
+            <h2>Total Views on channel:</h2>
+            <div id="ytView" class="odometer">laoding...</div>
+            <br>
+            <h2>Total Videos uploaded:</h2>
+            <div id="ytVideo" class="odometer">laoding...</div>
+           </div>
     </body>
 </html>
