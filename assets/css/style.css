@@ -6,6 +6,7 @@
   
 }
 .counter-main{
+  padding: 16px;
 }
 .stats{
 }
@@ -14,11 +15,13 @@
   width: 100%;
 }
 .ytImage{
-width: 100%;
+width: 60%;
 border-radius: 50%;
+position: relative;
+left: 25%;
 }
 img{
-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.5);
 border-radius: 50%;
 }
 .ytSubs{
@@ -37,6 +40,19 @@ font-weight: bolder;
   font-size: 50px;
 }
 
+
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+input[type=text]:focus {
+  border: 3px solid #555;
+}
+.subscriber-text{
+  font-size: 30px;
+}
 
 
 

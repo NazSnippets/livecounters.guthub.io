@@ -1,45 +1,42 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Live Counter</title>
-        <link rel="icon" type="image/png" href="assets/img/Website logo.png">
-         <link rel="stylesheet" href="assets/css/odometer-theme-minimal.css" />
-         <link rel="stylesheet" href="assets/css/style.css">
-         <script src="assets/js/odometer.min.js"></script>
-         <script src="assets/js/jquery.min.js"></script>
-         <script src="assets/js/script.js"></script>
 
-         
-         
-        
-    </head>
+<head>
+    <title> Realtime YouTube Subscriber counter  | Live Counter</title>
+    <link rel="icon" type="image/png" href="assets/images/Website-logo.png">
+    <link rel="stylesheet" href="assets/css/odometer-theme-minimal.css" />
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/odometer.min.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</head>
 
-       <body>
+<body>
 
-        <div class="card">
-            
-           <div class="counter-main">
+    <div class="card">
+
+        <div class="counter-main">
             <p id="ytName" class="ytName">ytName</p>
             <div id="ytImage" class="ytImage">
-            <img src="assets/images/profilepic.png" alt="avater" id="ytImage" class="ytImage">
+                <img src="assets/images/profilepic.png" alt="avater" id="ytImage" class="ytImage">
             </div>
             <br>
             <div id="ytSubs" class="ytSubs odometer">0,000</div>
             <p class="subscriber-text">subscribers</p>
-            <input type="text" id="chnlName" class="chnlName" placeholder="Enter Channel ID"></input>
-            <button id="change" class="change">Change</button>
-           </div>
-           <br>
-           <div class="card">
-            <p id="ytLink" class="ytLink">ytLink</p>
-           </div>
-           <div class="card">
+            <input type="text" id="chnlName" class="chnlName" placeholder="Enter Channel ID !"></input>
+            <button onclick="document.getElementById('myInput').value = ''"  id="change" class="change">Change</button>
+        </div>
+        <br>
+        <div class="card">
+            <p id="ytLink" class="ytLink">Subscribe</p>
+        <div class="card">
             <h1>Stats</h1>
             <h2>Total Views on channel:</h2>
             <div id="ytView" class="odometer">laoding...</div>
             <br>
             <h2>Total Videos uploaded:</h2>
             <div id="ytVideo" class="odometer">laoding...</div>
-           </div>
-    </body>
+        </div>
+</body>
+
 </html>
